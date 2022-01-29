@@ -7,6 +7,7 @@ import {
   Grid,
   Divider,
 } from "@material-ui/core";
+import Form from "./form/form";
 import makeStyles from "./styles";
 
 const main = () => {
@@ -26,7 +27,7 @@ const main = () => {
           try saying: add income for $100 in category salary for Monday.
         </Typography>
         <Divider />
-        {/* form */}
+        <Form />
       </CardContent>
       <CardContent className={classes.cartContent}>
         <Grid container spaceing={2}>

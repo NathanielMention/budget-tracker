@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import Details from "./components/details/details";
+import Main from "./components/main/main";
 import makeStyles from "./styles";
 
 const app = () => {
@@ -18,8 +19,8 @@ const app = () => {
         <Grid item xs={12} sm={4}>
           <Details title="Income" />
         </Grid>
-        <Grid item xs={12} sm={4}>
-          main
+        <Grid item xs={12} sm={3}>
+          <Main />
         </Grid>
         <Grid item xs={12} sm={4}>
           <Details title="Expense" />

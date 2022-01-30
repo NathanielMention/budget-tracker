@@ -18,9 +18,9 @@ const initialState = {
   date: new Date(),
 };
 
-const form = () => {
+const Form = () => {
   const classes = makeStyles();
-  const [formData, setformData] = useState(initialState);
+  const [formData, setFormData] = useState(initialState);
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -82,4 +82,4 @@ const form = () => {
   );
 };
 
-export default form;
+export default Form;

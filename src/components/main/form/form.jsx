@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   TextField,
   Typography,
@@ -9,6 +9,8 @@ import {
   Select,
   MenuItem,
 } from "@material-ui/core";
+import { BudgetTrackerContext } from "../../../context/context";
+import { v4 as uuidv4 } from "uuid";
 import makeStyles from "./styles";
 
 const initialState = {
@@ -21,6 +23,16 @@ const initialState = {
 const Form = () => {
   const classes = makeStyles();
   const [formData, setFormData] = useState(initialState);
+  const { addTransaction } = useContext(BudgetTrackerContext);
+  const createTransaction = () => {
+    const transaction = {
+      ...formData,
+      amount: Number(formData.amount),
+      id: uuidv4(),
+    };
+    addTransaction(transaction);
+    setFormData(initialState);
+  };
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -74,6 +86,7 @@ const Form = () => {
         className={classes.button}
         varient="outlined"
         color="primary"
+        onClick={createTransaction}
         fullWidth
       >
         Create

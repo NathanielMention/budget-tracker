@@ -8,7 +8,7 @@ import {
 
 const useTransactions = (title) => {
   resetCategories();
-  const { transactions } = useContext(ExpenseTrackerContext);
+  const { transactions } = useContext(BudgetTrackerContext);
   const rightTransactions = transactions.filter((t) => t.type === title);
   const total = rightTransactions.reduce(
     (acc, currVal) => (acc += currVal.amount),
@@ -34,7 +34,7 @@ const useTransactions = (title) => {
     labels: filteredCategories.map((c) => c.type),
   };
 
-  return { filteredCategories, total, chartData };
+  return { total, chartData };
 };
 
 export default useTransactions;

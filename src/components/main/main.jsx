@@ -14,7 +14,7 @@ import List from "./list/list";
 const main = () => {
   const classes = makeStyles();
   return (
-    <Card classname={classes.root}>
+    <Card className={classes.root}>
       <CardHeader title="Expense Tracker" subheader="Powered By Speechly" />
       <CardContent>
         <Typography align="center" varient="h5">

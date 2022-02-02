@@ -1,8 +1,10 @@
 import React from "react";
 import { Card, CardHeader, CardContent, Typography } from "@material-ui/core";
-import Doughnut from "chart.js/auto";
+import { Doughnut } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
 import useTransactions from "../../useTransactions";
 import makeStyles from "./styles";
+Chart.register(...registerables);
 
 const Details = ({ title }) => {
   const classes = makeStyles();
@@ -12,7 +14,7 @@ const Details = ({ title }) => {
       <CardHeader title={title} />
       <CardContent>
         <Typography variant="h5">${total}</Typography>
-        {/* <Doughnut data="DATA" /> */}
+        <Doughnut type="doughnut" data={chartData} />
       </CardContent>
     </Card>
   );

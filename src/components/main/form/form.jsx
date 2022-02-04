@@ -16,6 +16,7 @@ import {
 } from "../../../constants/categories";
 import formatDate from "../../../utils/formatDate";
 import { v4 as uuidv4 } from "uuid";
+import { useSpeechContext } from "@speechly/react-client";
 import makeStyles from "./styles";
 
 const initialState = {
@@ -28,6 +29,7 @@ const initialState = {
 const Form = () => {
   const classes = makeStyles();
   const [formData, setFormData] = useState(initialState);
+  const { segment } = useSpeechContext();
   const { addTransaction } = useContext(BudgetTrackerContext);
   const createTransaction = () => {
     const transaction = {
@@ -44,7 +46,11 @@ const Form = () => {
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Typography align="center" variant="subtitle2" gutterBottom>
-          ...
+          {segment ? (
+            <div className="segment">
+              {segment.words.map((w) => w.value).join(" ")}
+            </div>
+          ) : null}
         </Typography>
       </Grid>
       <Grid item xs={6}>

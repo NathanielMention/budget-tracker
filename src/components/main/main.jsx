@@ -11,6 +11,7 @@ import { BudgetTrackerContext } from "../../context/context";
 import Form from "./form/form";
 import makeStyles from "./styles";
 import List from "./list/list";
+import InfoCard from "../InfoCard";
 
 const Main = () => {
   const classes = makeStyles();
@@ -26,8 +27,7 @@ const Main = () => {
           varient="subtitle1"
           style={{ lineheight: "1.5em", marginTop: "20px" }}
         >
-          {/* infocard component */}
-          try saying: add income for $100 in category salary for Monday.
+          <InfoCard />
         </Typography>
         <Divider />
         <Form />

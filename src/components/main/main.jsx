@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Card,
   CardHeader,
@@ -7,18 +7,20 @@ import {
   Grid,
   Divider,
 } from "@material-ui/core";
+import { BudgetTrackerContext } from "../../context/context";
 import Form from "./form/form";
 import makeStyles from "./styles";
 import List from "./list/list";
 
-const main = () => {
+const Main = () => {
   const classes = makeStyles();
+  const { balance } = useContext(BudgetTrackerContext);
   return (
     <Card className={classes.root}>
       <CardHeader title="Expense Tracker" subheader="Powered By Speechly" />
       <CardContent>
         <Typography align="center" varient="h5">
-          Total Balance $110
+          Total Balance ${balance}
         </Typography>
         <Typography
           varient="subtitle1"
@@ -41,4 +43,4 @@ const main = () => {
   );
 };
 
-export default main;
+export default Main;

@@ -24,6 +24,7 @@ const Main = () => {
           Total Balance ${balance}
         </Typography>
         <Typography
+          component={"span"}
           varient="subtitle1"
           style={{ lineheight: "1.5em", marginTop: "20px" }}
         >

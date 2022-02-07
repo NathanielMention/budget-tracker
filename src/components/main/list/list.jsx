@@ -15,7 +15,7 @@ import makeStyles from "./styles";
 
 const List = () => {
   const classes = makeStyles();
-  const { deleteTransactions, transactions } = useContext(BudgetTrackerContext);
+  const { transactions, deleteTransaction } = useContext(BudgetTrackerContext);
 
   return (
     <MUIList dense={false} className={classes.list}>
@@ -47,7 +47,7 @@ const List = () => {
               <IconButton
                 edge="end"
                 aria-label="delete"
-                onClick={() => deleteTransactions(transaction.id)}
+                onClick={() => deleteTransaction(transaction.id)}
               >
                 <Delete />
               </IconButton>

@@ -3,6 +3,7 @@
 ## Table of contents
 
 - [Introduction](#Introduction)
+- [Design](#Design)
 - [Features](#Features)
 - [Technologies](#Technologies)
 - [Setup](#Setup)
